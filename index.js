@@ -41,6 +41,11 @@ let reload = function() {
  *  ```
  */
 function setup(config, ...params){
+    config.server.use((req,res,next)=>{
+        if(router != null) {
+            router(req, res, next)
+        }
+    })
     reload = function() {
         const start = performance.now();
         try{
