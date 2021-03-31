@@ -1,6 +1,6 @@
 {
   "name": "@soniccodes/hotpress",
-  "version": "0.4.3",
+  "version": "0.5.1",
   "description": "Were you ever sick of waiting for express to restart the server just to test a simple change, now that's a thing of the past.",
   "main": "index.js",
   "scripts": {

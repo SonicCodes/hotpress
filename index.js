@@ -52,8 +52,8 @@ function setup(config, ...params){
             if(config.preload != null) config.preload()
             router = null;
             router = express.Router();
-            delete require.cache[require.resolve(config.reloadable)]
-            const reloaded = require(config.reloadable)
+            delete require.cache[require.resolve(config.reloadable.replace("./","@app/"))]
+            const reloaded = require(config.reloadable.replace("./","@app/"))
             reloaded(router,...params)
             const end = performance.now();
             if(wasError){
