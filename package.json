@@ -1,0 +1,27 @@
+{
+  "name": "@soniccodes/hotpress",
+  "version": "0.4.1",
+  "description": "Were you ever sick of waiting for express to restart the server just to test a simple change, now that's a thing of the past.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SonicCodes/hotpress.git"
+  },
+  "keywords": [
+    "Fast",
+    "Express.js",
+    "development"
+  ],
+  "author": "SonicCodes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SonicCodes/hotpress/issues"
+  },
+  "homepage": "https://github.com/SonicCodes/hotpress#readme",
+  "devDependencies": {
+    "express": "^4.17.1"
+  }
+}
