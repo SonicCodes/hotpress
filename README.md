@@ -1,5 +1,5 @@
-#HotPress 🔥 - Hot Reloading for ExpressJs
-##Philosophy
+# HotPress 🔥 - Hot Reloading for ExpressJs
+## Philosophy
 - Why should you restart a http server just for a small change in your source code. isn't HTTP meant to be stateless.
 - Aren't you meant to have a static fetch-once properties for development.
 
@@ -7,12 +7,12 @@ If you agree with those philosophies, then you'll love HotPress.
 
 What HotPress does is that it only initializes the server and required parameters once and pass it to your virtual server (Router).
 
-##Usage
+## Usage
 ```shell
 npm install @soniccodes/hotpress
 ```
 
-####./foo.js - The reloadable file
+#### ./foo.js - The reloadable file
 ```js
 /**
   @param server : Router
@@ -26,7 +26,7 @@ function reload(server) {
 modules.export = reload //This is very important
 ```
 
-####server.js 
+#### server.js 
 ```js
 const express = require("express")
 const {setup,reload} = require("@soniccodes/hotpress")
@@ -38,12 +38,12 @@ app.listen(port,(err)=>{
 })
 ```
 
-##Here's what you should expect.
-###Before
+## Here's what you should expect.
+### Before
 
-###After
+### After
 
-##License
+## License
 ```
 Copyright 2021 Rami Mohammed
 
