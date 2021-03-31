@@ -33,6 +33,7 @@ let reload = function() {
  *
  *  - ./server.js - your good old friend.
  *  ```
+ *  global.rootPatch = __dirname //Very important
  *  const express = require("express")
  *  const {setup,reload} = require("@soniccodes/hotpress")
  *  const app = express()
@@ -41,6 +42,10 @@ let reload = function() {
  *  ```
  */
 function setup(config, ...params){
+    if(global.rootPatch===undefined){
+        throw "global.rootPatch = __dirname   needs to be set, please do in your main entry point."
+    }
+
     config.server.use((req,res,next)=>{
         if(router != null) {
             router(req, res, next)
@@ -52,8 +57,8 @@ function setup(config, ...params){
             if(config.preload != null) config.preload()
             router = null;
             router = express.Router();
-            delete require.cache[require.resolve(config.reloadable.replace("./","@app/"))]
-            const reloaded = require(config.reloadable.replace("./","@app/"))
+            delete require.cache[require.resolve(global.rootPatch+"/"+config.reloadable)]
+            const reloaded = require(global.rootPatch+"/"+config.reloadable)
             reloaded(router,...params)
             const end = performance.now();
             if(wasError){
@@ -71,7 +76,7 @@ function setup(config, ...params){
             if(config.error != null) config.error(e)
         }
     }
-    fs.watchFile(config.reloadable,{interval:100},()=>{
+    fs.watchFile(global.rootPatch+"/"+config.reloadable,{interval:100},()=>{
         reload();
     })
     reload()

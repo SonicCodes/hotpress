@@ -15,14 +15,7 @@ npm install @soniccodes/hotpress
 ```shell
 yarn add @soniccodes/hotpress
 ```
-####package.json - This is a very important step
-```json
-{
-  "_moduleAliases": {
-    "@app": ".",
-  }
-}
-```
+
 
 #### ./foo.js - The reloadable file
 ```js
@@ -40,6 +33,8 @@ modules.export = reload //This is very important
 
 #### server.js 
 ```js
+global.rootPatch = __dirname //Very important
+
 const express = require("express")
 const {setup,reload} = require("@soniccodes/hotpress")
 const app = express()
