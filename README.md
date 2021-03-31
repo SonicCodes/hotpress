@@ -12,6 +12,10 @@ What HotPress does is that it only initializes the server and required parameter
 npm install @soniccodes/hotpress
 ```
 
+```shell
+yarn add @soniccodes/hotpress
+```
+
 #### ./foo.js - The reloadable file
 ```js
 /**
