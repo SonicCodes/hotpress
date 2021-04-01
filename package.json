@@ -1,6 +1,6 @@
 {
   "name": "@soniccodes/hotpress",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Were you ever sick of waiting for express to restart the server just to test a simple change, now that's a thing of the past.",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
     "url": "https://github.com/SonicCodes/hotpress/issues"
   },
   "homepage": "https://github.com/SonicCodes/hotpress#readme",
-  "devDependencies": {
+  "dependencies": {
     "express": "^4.17.1"
   }
 }
