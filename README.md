@@ -1,4 +1,4 @@
-# HotPress 🔥 - Hot Reloading for ExpressJs
+# HotPress 🔥 - The real Hot-Reloading for ExpressJs
 ## Philosophy
 - Why should you restart a http server just for a small change in your source code. isn't HTTP meant to be stateless.
 - Aren't you meant to have a static fetch-once properties for development.
