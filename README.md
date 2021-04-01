@@ -45,6 +45,26 @@ app.listen(port,(err)=>{
 })
 ```
 
+#### a full configuration
+```js
+global.rootPatch = __dirname //Very important
+
+const express = require("express")
+const app = express()
+if(prod){
+   require("./foo.js")(app,...params)
+}else{
+   const {setup,reload} = require("@soniccodes/hotpress")
+   setup({server:app,reloadable:"./foo.js"}) //Note: Relative path
+}
+app.listen(port,(err)=>{
+   if(err) throw err;
+   console.log("⚡ Ready on http://localhost:"+port);
+})
+```
+
+
+
 ## Here's what you should expect.
 ### Before
 ![Screen Shot 2021-03-31 at 6 41 06 AM](https://user-images.githubusercontent.com/48802163/113087341-17a60e00-91ec-11eb-8d6e-4aab02c5a73c.png)
